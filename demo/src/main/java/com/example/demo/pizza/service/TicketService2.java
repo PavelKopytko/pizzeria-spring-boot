@@ -54,7 +54,7 @@ public class TicketService2 implements ITicketService2 {
     }
 
     @Override
-    public Ticket read(long id) throws ServiceException, IDServiceException {
+    public Ticket read(long id) throws ServiceException {
         Ticket ticket;
         try {
             ticket = ticketDao.findById(id).orElseThrow();
@@ -69,10 +69,10 @@ public class TicketService2 implements ITicketService2 {
 
         List<Ticket> tickets;
 //        try {
-            tickets = ticketDao.findAll();
-            if (tickets.isEmpty()) {
-                throw new IllegalArgumentException("Нет доступных заказов");
-            }
+        tickets = ticketDao.findAll();
+        if (tickets.isEmpty()) {
+            throw new IllegalArgumentException("Нет доступных заказов");
+        }
 //        } catch (DaoException e) {
 //            throw new ServiceException(e.getMessage(), e);
 //        }

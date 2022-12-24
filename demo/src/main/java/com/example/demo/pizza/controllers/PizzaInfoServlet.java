@@ -1,4 +1,4 @@
-package com.example.demo.pizza.controllers.spring;
+package com.example.demo.pizza.controllers;
 
 
 import com.example.demo.pizza.core.dto.PizzaInfoDto;

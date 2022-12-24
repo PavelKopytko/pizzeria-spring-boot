@@ -8,5 +8,5 @@ import com.example.demo.pizza.service.exception.IDServiceException;
 import com.example.demo.pizza.service.exception.ServiceException;
 
 public interface IDoneOrderService {
-    DoneOrder read(long id) throws IDServiceException, ServiceException;
+    DoneOrder read(long id) throws  ServiceException;
 }

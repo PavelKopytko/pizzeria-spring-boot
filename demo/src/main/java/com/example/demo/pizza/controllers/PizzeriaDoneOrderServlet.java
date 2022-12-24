@@ -1,4 +1,4 @@
-package com.example.demo.pizza.controllers.spring;
+package com.example.demo.pizza.controllers;
 
 import com.example.demo.pizza.core.dto.OrderStatusDto;
 import com.example.demo.pizza.core.entity.api.IDoneOrder;
@@ -39,20 +39,13 @@ public class PizzeriaDoneOrderServlet {
     protected ResponseEntity<IDoneOrder> doGet(@PathVariable long id) {
 
         try {
-//            IOrderStatus orderStatus = service.read(id);
-//            if (orderStatus == null) {
-//                return new ResponseEntity<>(HttpStatus.NO_CONTENT);
-//            } else {
-            return ResponseEntity.ok(service.read(id));
-//            }
 
-        } catch (NumberFormatException e) {
-//            resp.setStatus(HttpServletResponse.SC_BAD_REQUEST);
+            return ResponseEntity.ok(service.read(id));
+
         } catch (ServiceException e) {
             return new ResponseEntity<>(HttpStatus.NO_CONTENT);
         } catch (Exception e) {
-//            resp.setStatus(HttpServletResponse.SC_NO_CONTENT);
+            return new ResponseEntity<>(HttpStatus.INTERNAL_SERVER_ERROR);
         }
-        return null;
     }
 }

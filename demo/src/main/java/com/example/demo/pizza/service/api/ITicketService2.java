@@ -13,7 +13,7 @@ public interface ITicketService2  {
 
     Ticket create(Ticket item) throws ServiceException, ValidateException, NotUniqServiceException;
 
-    Ticket read(long id) throws IDServiceException, ServiceException;
+    Ticket read(long id) throws  ServiceException;
 
     List<Ticket> get() throws ServiceException;
 

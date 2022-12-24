@@ -42,33 +42,28 @@ public class OrderStatusService implements IOrderStatusService {
 
         LocalDateTime localDateTime = LocalDateTime.now().truncatedTo(ChronoUnit.MILLIS);
 
-        try {
-            Ticket ticket = this.ticketService2.read(item.getTicket());
+        Ticket ticket = this.ticketService2.read(item.getTicket());
 
-            List<IStage> stages = new ArrayList<>();
-            stages.add(new Stage(
-                            localDateTime,
-                            localDateTime,
-                            item.getStage()
-                    )
-            );
+        List<IStage> stages = new ArrayList<>();
+        stages.add(new Stage(
+                        localDateTime,
+                        localDateTime,
+                        item.getStage()
+                )
+        );
 
-            OrderStatus status = new OrderStatus(
-                    localDateTime,
-                    localDateTime,
-                    ticket,
-                    false,
-                    stages
-            );
+        OrderStatus status = new OrderStatus(
+                localDateTime,
+                localDateTime,
+                ticket,
+                false,
+                stages
+        );
 
-            statusOut = this.dao.save(status);
+        statusOut = this.dao.save(status);
 
 
-        } catch (IDServiceException e) {
-            throw new RuntimeException(e);
-        }
-
-//        } catch (IllegalStateException | IllegalArgumentException e) {
+        //        } catch (IllegalStateException | IllegalArgumentException e) {
 //            throw new ValidateException(e.getMessage(), e);
 //        } catch (DaoException e) {
 //            throw new ServiceException(e.getMessage(), e);

@@ -27,7 +27,7 @@ public class DoneOrderService implements IDoneOrderService {
 
 
     @Override
-    public DoneOrder read(long id) throws IDServiceException, ServiceException {
+    public DoneOrder read(long id) throws ServiceException {
         DoneOrder doneOrder = null;
 
         ITicket ticket = ticketService2.read(id);

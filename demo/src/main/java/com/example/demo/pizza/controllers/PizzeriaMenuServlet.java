@@ -1,4 +1,4 @@
-package com.example.demo.pizza.controllers.spring;
+package com.example.demo.pizza.controllers;
 
 import com.example.demo.pizza.core.dto.MenuDto;
 import com.example.demo.pizza.core.entity.api.IMenu;
@@ -23,10 +23,6 @@ import java.util.List;
 @RequestMapping("/pizzeria/menu")
 public class PizzeriaMenuServlet {
 
-//    private final static String CHARSET = "UTF-8";
-//    private final static String CONTENT_TYPE = "application/json";
-//    private final static String ID = "id";
-//    private final static String DT_UPDATE = "update";
 
     private final IMenuFullService menuFullService;
 //    private final ObjectMapper mapper;
